@@ -34,6 +34,8 @@ INSTALLED_APPS = [
     'pages.apps.PagesConfig',
     'listings.apps.ListingsConfig',
     'realtors.apps.RealtorsConfig',
+    'accounts.apps.AccountsConfig',
+    'contacts.apps.ContactsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -134,3 +136,23 @@ STATICFILES_DIRS = [
 # Media Folder Setting
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+# Messages
+
+from django.contrib.messages import constants as messages
+MESSAGE_TAGS = {
+    messages.ERROR: 'danger',
+    
+}
+
+
+# Email config
+SEND_GRID_API_KEY = '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'
+EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'samuel46'
+EMAIL_HOST_PASSWORD = '#samuel4658'
+EMAIL_USE_TLS= True
+DEFAULT_FROM_EMAIL ='samuelmunyiri34@gmail.com'
+ACCOUNT_EMAIL_SUBJECT_PREFIX = 'There has been  an inquiry for property'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'

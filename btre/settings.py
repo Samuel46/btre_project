@@ -156,3 +156,9 @@ EMAIL_USE_TLS= True
 DEFAULT_FROM_EMAIL ='samuelmunyiri34@gmail.com'
 ACCOUNT_EMAIL_SUBJECT_PREFIX = 'There has been  an inquiry for property'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+
+try: 
+    from .local_settings import *
+except ImportError:
+    pass
